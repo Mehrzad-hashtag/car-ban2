@@ -92,7 +92,7 @@
       >
         <NuxtLink to="/love">
           <p>{{ slotProps.item.id }}</p>
-          <p class="text-red-600">{{ slotProps.item.para }}</p>
+          <p class="text-green-600">{{ slotProps.item.para }}</p>
           <!-- <img class="bg-contain" src="/benzz.avif" alt="dsf" /> -->
         </NuxtLink>
       </div>
