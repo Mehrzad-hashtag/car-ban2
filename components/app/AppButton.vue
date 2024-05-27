@@ -1,0 +1,9 @@
+<template>
+  <UButton
+    icon="i-heroicons-list-bullet-16-solid"
+    size="xl"
+    color="black"
+    square
+    variant="ghost"
+  />
+</template>
