@@ -1,9 +1,8 @@
 <template>
-  <div class="wrapper mb-20">
+  <div class="wrapper">
     <template v-for="(item, index) in data">
-      <slot
-        :item="item"
-        :itemStyle="`animation-delay: calc(${delayDuration}s / ${
+      <span
+        :style="`animation-delay: calc(${delayDuration}s / ${
           data.length
         } * (${data.length} - ${index + 1}) * -1); position: absolute;
         width: ${itemsWidth}px;
@@ -12,7 +11,9 @@
         animation-duration: ${delayDuration}s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;`"
-      ></slot>
+      >
+        <slot :item="item"></slot>
+      </span>
     </template>
   </div>
 </template>
@@ -21,7 +22,7 @@
 const props = defineProps({
   data: { type: Array, required: true },
   itemsWidth: { type: Number, required: true },
-  delayDuration: { type: Number, required: false, default: 20 },
+  delayDuration: { type: Number, required: false, default: 30 },
 });
 
 const scrollLeftValue = `-${props.itemsWidth}px`;
@@ -41,8 +42,8 @@ const scrollLeftValue = `-${props.itemsWidth}px`;
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 1) 20%,
-    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 1) 6%,
+    rgba(0, 0, 0, 1) 94%,
     rgba(0, 0, 0, 0)
   );
 }

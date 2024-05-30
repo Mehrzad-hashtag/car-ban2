@@ -13,7 +13,8 @@ const items = [
     id: "2",
     nameCar: "پرشیا ",
     Description: "به میزبانی کارل فردریکسن",
-    price: "12000000",
+    tavafogi: true,
+    price: "0",
     carImg: ["pride.webp", "/sa.jpg"],
   },
   {
@@ -168,7 +169,14 @@ const nFormat = new Intl.NumberFormat();
           <span class="text-sm dark:text-gray-400 text-gray-500">{{
             box.Description
           }}</span>
-          <span class="text-gray-500 dark:text-gray-400 font-medium"
+
+          <span
+            v-if="box.tavafogi"
+            class="text-blue-500 dark:text-blue-400 font-medium"
+          >
+            توافقی
+          </span>
+          <span v-else class="text-gray-500 dark:text-gray-400 font-medium"
             >قیمت:
             <span class="text-black dark:text-white">{{
               nFormat.format(+box.price)

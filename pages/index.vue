@@ -23,7 +23,7 @@
                 v-slot="{ item }"
                 :items="items"
                 :ui="{
-                  item: 'basis-32',
+                  item: 'basis-28',
                   container: 'rounded-sm',
                 }"
                 :prev-button="{
@@ -39,7 +39,7 @@
                 arrows
                 class="w-full text-right md:w-full"
               >
-                <NuxtLink :to="add">
+                <NuxtLink to="/">
                   <div
                     class="group mt-6 mb-2 z-50 flex-wrap flex flex-col justify-center items-center md:container mx-auto"
                   >
@@ -84,17 +84,24 @@
       class="h-64"
       v-slot="slotProps"
       :data="mehrzad"
-      :itemsWidth="600"
+      :itemsWidth="300"
     >
       <div
-        class="h-64 rounded-md bg-slate-900 text-red-500"
-        :style="slotProps.itemStyle"
+        class="h-32 rounded-md bg-blue-600 flex flex-row justify-start px-2 py-2 items-center"
       >
-        <NuxtLink to="/love">
-          <p>{{ slotProps.item.id }}</p>
-          <p class="text-green-600">{{ slotProps.item.para }}</p>
-          <!-- <img class="bg-contain" src="/benzz.avif" alt="dsf" /> -->
+        <NuxtLink :to="slotProps.item.path">
+          <div class="w-2/3">
+            <p class="text-white">{{ slotProps.item.nameCar }}</p>
+            <p class="text-gray-300">{{ slotProps.item.para }}</p>
+            <span class="text-gray-300"
+              ><span class="text-white"> قیمت : </span
+              >{{ slotProps.item.price }}</span
+            >
+          </div>
         </NuxtLink>
+        <div class="w-2/3">
+          <img class="w-full h-full" :src="slotProps.item.ask" alt="222" />
+        </div>
       </div>
     </infiniteHorizontal>
   </section>
@@ -148,7 +155,37 @@ const items = [
 const mehrzad = [
   {
     id: 1,
-    para: "mehrzad",
+    nameCar: "فونیکس",
+    para: "1.8 لیتر توربو",
+    price: "1000000000",
+    path: "/love",
+    aks: "/img/aa.png",
+  },
+  {
+    id: 2,
+    nameCar: "کی ام سی",
+    para: "1.9 لیتر توربو",
+    price: "2000000000",
+    aks: "/img/aa.png",
+  },
+  {
+    id: 3,
+    nameCar: "ساینا",
+    para: "2.0 لیتر توربو",
+    price: "500000000",
+    aks: "/img/aa.png",
+  },
+  {
+    id: 4,
+    nameCar: "405",
+    para: "1.5 لیتر توربو",
+    price: "450000000",
+  },
+  {
+    id: 5,
+    nameCar: "bmw",
+    para: "1.6 لیتر توربو",
+    price: "5000000000",
   },
 ];
 const carouselTow = ref("");

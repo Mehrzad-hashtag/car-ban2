@@ -62,7 +62,10 @@
     <nav class="shadow-sm hidden md:flex md:justify-center md:items-center">
       <div
         class="px-1 fixed lg:py-4 w-full bg-white dark:bg-zinc-900 z-40"
-        :class="sizeMdHeader"
+        :class="{
+          'h-20 mt-20 ease-in-out overflow-hidden': isScrolled,
+          'h-46 mt-44': !isScrolled,
+        }"
       >
         <UContainer>
           <div class="flex flex-row-reverse">
@@ -91,8 +94,6 @@
                           >ثبت نام</UButton
                         >
                       </div>
-
-                      <Placeholder class="h-20 w-full" />
                     </div>
                   </template>
                 </UPopover>
@@ -119,7 +120,6 @@
 
                         <UButton color="blue" type="submit"> ارسال </UButton>
                       </UForm>
-                      <Placeholder class="h-48" />
                     </div>
                   </UModal>
                 </div>
@@ -152,8 +152,11 @@
                 class="flex lg:flex-row-reverse md:mt-3 lg:mt-0 md:flex-col-reverse lg:gap-4 md:gap-0 items-baseline justify-center"
               >
                 <div
-                  :class="handleButtonScale"
-                  class="flex justify-center items-center gap-1 pb-3 w-4/12 lg:mb-4"
+                  :class="{
+                    'scale-0 -translate-y-14 ': isScrolled,
+                    block: !isScrolled,
+                  }"
+                  class="flex justify-center items-center duration-300 gap-1 pb-3 w-4/12 lg:mb-4"
                 >
                   <UButton color="gray" variant="ghost">محل ماشین</UButton>
                   <UButton color="gray" variant="ghost">تجربیات</UButton>
@@ -161,20 +164,22 @@
                     >تجربیات از طریق وب</UButton
                   >
                 </div>
-                <search-input
-                  v-model="inputValue"
-                  :class="sizeSmHeader"
-                  class="md:w-10/12 lg:w-8/12"
+                <SearchInput
+                  v-model:search="inputValue"
+                  :class="{
+                    block: isScrolled,
+                    'scale-0 translate-y-14 hidden': !isScrolled,
+                  }"
+                  class="md:w-10/12 lg:w-8/12 duration-300"
                 />
               </div>
             </div>
           </div>
           <div class="">
-            <div :class="resizeInput">
-              <search-input
-                :value="inputValue"
-                @input="updateInputValue($event.target.value)"
-                class="lg:w-1/2 md:w-2/3 mb-2"
+            <div :class="{ 'scale-0': isScrolled, block: !isScrolled }">
+              <SearchInput
+                v-model:search="inputValue"
+                class="lg:w-1/2 md:w-2/3 mb-2 duration-300"
               />
             </div>
           </div>
@@ -189,11 +194,16 @@
 <script setup lang="ts">
 import { z } from "zod";
 import type { FormSubmitEvent } from "#ui/types";
-const inputValue: Ref<string> = ref("sadsa");
 
-const updateInputValue = (newValue: string) => {
-  inputValue.value = newValue;
-};
+const router = useRouter();
+const route = useRoute();
+const inputValue: Ref<any> = ref(route.query.search || "");
+
+watch(inputValue, (value) => {
+  console.log(value);
+  if (value) router.push({ query: { search: value } });
+  else router.push({ query: {} });
+});
 
 const schema = z.object({
   email: z.string().email("ایمیل نامعتبر"),
@@ -254,23 +264,14 @@ const items = [
   },
 ];
 
-const handleButtonScale = ref("");
-const resizeInput = ref("");
-const sizeMdHeader = ref("");
-const sizeSmHeader = ref("hidden");
 const isOpen = ref(false);
+const isScrolled = ref(false);
 
 const scrollAndResize = () => {
   if (window.scrollY > 50) {
-    resizeInput.value = "scale-0 duration-300";
-    sizeSmHeader.value = "block duration-300";
-    handleButtonScale.value = " scale-0 -translate-y-14 duration-300 ";
-    sizeMdHeader.value = "h-20 mt-20 ease-in-out overflow-hidden";
+    isScrolled.value = true;
   } else if (window.scrollY < 50) {
-    resizeInput.value = "block  duration-300";
-    sizeSmHeader.value = "scale-0 translate-y-14 duration-300";
-    handleButtonScale.value = "block duration-300 ";
-    sizeMdHeader.value = "h-46 mt-44 ";
+    isScrolled.value = false;
   }
 };
 onMounted(() => {

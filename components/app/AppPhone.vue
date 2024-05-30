@@ -76,7 +76,6 @@
                   <UButton color="blue" type="submit"> ارسال </UButton>
                 </UForm>
               </UContainer>
-              <Placeholder class="h-48 mx-auto" />
             </div>
           </UModal>
         </div>
