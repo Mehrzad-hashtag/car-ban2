@@ -59,7 +59,9 @@
 
   <!-- Desktop Navigation -->
   <section>
-    <nav class="shadow-sm hidden md:flex md:justify-center md:items-center">
+    <nav
+      class="shadow-sm hidden md:flex md:justify-center md:items-center transition-all duration-300"
+    >
       <div
         class="px-1 fixed lg:py-4 w-full bg-white dark:bg-zinc-900 z-40"
         :class="{
@@ -73,7 +75,7 @@
               class="flex flex-row-reverse justify-start items-center w-3/4 lg: md:mb-7 gap-4 lg:mb-4"
             >
               <div
-                class="rounded-3xl flex justify-around items-center w-4/12 lg:w-2/12 border"
+                class="rounded-3xl flex justify-around items-center w-3/12 lg:w-3/12 border"
               >
                 <!-- .... -->
                 <UPopover>
@@ -156,7 +158,7 @@
                     'scale-0 -translate-y-14 ': isScrolled,
                     block: !isScrolled,
                   }"
-                  class="flex justify-center items-center duration-300 gap-1 pb-3 w-4/12 lg:mb-4"
+                  class="flex justify-center items-center duration-300 gap-1 md:pt-8 lg:pt-0 w-4/12 lg:mb-4"
                 >
                   <UButton color="gray" variant="ghost">محل ماشین</UButton>
                   <UButton color="gray" variant="ghost">تجربیات</UButton>

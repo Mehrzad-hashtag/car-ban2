@@ -111,7 +111,6 @@ const scrollresize = () => {
   } else if (window.scrollY < 50) {
     scrollPhoneFooter.value = " transition-all  duration-300";
   }
-  console.log(scrollY);
 };
 onMounted(() => {
   scrollresize();

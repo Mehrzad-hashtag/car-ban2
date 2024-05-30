@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex justify-between flex-row-reverse items-center absolute lg:bottom-64 md:bottom-full bottom-48 pt-2 md:pt-7 left-4 right-2 top-0"
-  >
+  <div class="flex justify-between items-center my-2">
     <UButton
       label="اطلاعات"
       class="py-2"
@@ -10,12 +8,12 @@
       variant="solid"
     />
 
-    <AppButton
+    <!-- <AppButton
       @click="isSaved = !isSaved"
       :icon="cardIcon"
       color="blue"
       size="md"
-    />
+    /> -->
   </div>
 </template>
 
