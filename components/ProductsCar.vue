@@ -50,7 +50,11 @@
           </div>
           <UDivider icon="i-heroicons-arrow-down-circle-16-solid" />
           <div class="card-footer rastChin">
-            <span class="text-title"
+            <span
+              v-if="box.tavafogi"
+              class="text-blue-500 dark:text-blue-400 font-medium"
+            ></span>
+            <span v-else class="text-title"
               >قیمت :
               <span class="text-gray-600 dark:text-gray-400 text-base">{{
                 nFormat.format(+box.price)
@@ -112,7 +116,9 @@ const items = [
   {
     nameCar: "بنز ",
     Description: "به میزبانی کارل فردریکسن",
-    price: "توافقی",
+    tavafogi: true,
+
+    price: "0",
     carImg: ["bm-4.jpg", "pride.webp", "/sa.jpg"],
     salamati: "سالم",
     vazeyat: "بیرنگ",

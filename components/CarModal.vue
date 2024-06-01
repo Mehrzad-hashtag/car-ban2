@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
+
 const props = defineProps<{
   data: any;
 }>();
 const isOpen = defineModel<boolean>({ default: false });
+const items = ["/bm-3.jpg", "/bm-2.jpg", "/bm-3.jpg", "/bm-4.jpg", "/bm-4.jpg"];
 </script>
 
 <template>
@@ -26,7 +29,10 @@ const isOpen = defineModel<boolean>({ default: false });
             />
           </div>
         </template>
-
+        <section class="">
+          <AppGallery :images="data.carImg" />
+        </section>
+        <UDivider class="mt-4" icon="i-heroicons-arrow-down-circle-16-solid" />
         <div>
           <span> اسم ماشین : {{ data.nameCar }}</span>
         </div>
@@ -41,7 +47,7 @@ const isOpen = defineModel<boolean>({ default: false });
 
         <template #footer>
           <NuxtLink to="love">
-            <UButton color="gray" variant="ghost"
+            <UButton :to="`/car/${data.id}`" color="gray" variant="ghost"
               >برای مشاهده جزئیات بیشتر کلیک کنید.</UButton
             >
           </NuxtLink>
@@ -51,4 +57,13 @@ const isOpen = defineModel<boolean>({ default: false });
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.chap-chin {
+  direction: ltr;
+}
+.card-img {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1.2/0.8;
+}
+</style>

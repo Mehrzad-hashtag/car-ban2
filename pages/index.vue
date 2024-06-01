@@ -105,6 +105,13 @@
       </div>
     </infiniteHorizontal>
   </section>
+  <html className="scrollbar-thumb-sky-700 scrollbar-track-sky-300">
+    <!-- ... -->
+    <div className="scrollbar-thin h-32 overflow-y-scroll">
+      <div className="h-64 bg-slate-400">sad</div>
+    </div>
+    <!-- ... -->
+  </html>
   <!-- ... -->
 </template>
 
