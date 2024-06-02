@@ -63,7 +63,7 @@
       class="shadow-sm hidden md:flex md:justify-center md:items-center transition-all duration-300"
     >
       <div
-        class="px-1 fixed lg:py-4 w-full bg-white dark:bg-zinc-900 z-40"
+        class="px-1 fixed lg:py-4 w-full bg-gray-50 dark:bg-zinc-900 z-30"
         :class="{
           'h-20 mt-20 ease-in-out overflow-hidden': isScrolled,
           'h-46 mt-44': !isScrolled,
@@ -75,7 +75,7 @@
               class="flex flex-row-reverse justify-start items-center w-3/4 lg: md:mb-7 gap-4 lg:mb-4"
             >
               <div
-                class="rounded-3xl flex justify-around items-center w-3/12 lg:w-3/12 border"
+                class="rounded-3xl flex justify-around items-center w-3/12 lg:w-3/12 border mb-2 border-gray-300 bg-white dark:bg-zinc-900"
               >
                 <!-- .... -->
                 <UPopover>
@@ -178,7 +178,7 @@
             </div>
           </div>
           <div class="">
-            <div :class="{ 'scale-0': isScrolled, block: !isScrolled }">
+            <div :class="{ 'scale-0 ': isScrolled, block: !isScrolled }">
               <SearchInput
                 v-model:search="inputValue"
                 class="lg:w-1/2 md:w-2/3 mb-2 duration-300"

@@ -3,6 +3,7 @@
     <div class="mb-40 md:mb-52">
       <AppHeader />
     </div>
+    <AppMakan></AppMakan>
 
     <div class="z-0">
       <slot />
@@ -27,11 +28,6 @@ useHead({
     },
   ],
 });
-
-const selected = ref(true);
-function handleicon() {
-  selected.value = !selected.value;
-}
 </script>
 <style>
 body {

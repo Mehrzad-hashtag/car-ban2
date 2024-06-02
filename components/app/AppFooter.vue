@@ -1,5 +1,7 @@
 <template>
-  <footer class="bg-gray-50 dark:bg-zinc-900">
+  <footer
+    class="bg-gray-50 dark:bg-zinc-900 border-t dark:border-zinc-800 border-gray-100"
+  >
     <div class="mx-auto w-full max-w-screen-xl">
       <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
         <div>
@@ -195,4 +197,4 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

@@ -53,7 +53,8 @@
             <span
               v-if="box.tavafogi"
               class="text-blue-500 dark:text-blue-400 font-medium"
-            ></span>
+              >توافقی</span
+            >
             <span v-else class="text-title"
               >قیمت :
               <span class="text-gray-600 dark:text-gray-400 text-base">{{
@@ -73,9 +74,6 @@
         </div>
       </section>
       <!-- ...2/... -->
-      <!-- ...3... -->
-      <section class="mx-auto"></section>
-      <!-- ...3/... -->
     </div>
     <CarModal v-model="isOpen" :data="carDetail"></CarModal>
   </div>
@@ -84,158 +82,9 @@
 <script setup lang="ts">
 const isOpen = ref(false);
 const carDetail = ref({});
-const items = [
-  {
-    id: "1",
-    nameCar: "bmw",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "12000000",
-    carImg: ["/bm-1.jpg", "ww.webp", "pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
 
-  {
-    id: "2",
-    nameCar: "پرشیا ",
-    Description: "به میزبانی کارل فردریکسن",
-    tavafogi: true,
-    price: "0",
-    carImg: ["bm-2.jpg", "pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "55200000",
-    carImg: ["bm-3.jpg", "pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "بنز ",
-    Description: "به میزبانی کارل فردریکسن",
-    tavafogi: true,
+const items = useItems();
 
-    price: "0",
-    carImg: ["bm-4.jpg", "pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-  {
-    nameCar: "سمند ",
-    Description: "به میزبانی کارل فردریکسن",
-    price: "0",
-    carImg: ["pride.webp", "/sa.jpg"],
-    salamati: "سالم",
-    vazeyat: "بیرنگ",
-  },
-];
 const nFormat = new Intl.NumberFormat();
 
 const handleModal = (car: any) => {

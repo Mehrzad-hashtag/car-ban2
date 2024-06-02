@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container mx-auto shadow-md flex flex-row-reverse justify-center items-center w-10/12 border pr-3 border-blue-100 dark:border-gray-500 rounded-full px-1 py-2"
+    class="container mx-auto shadow-md flex flex-row-reverse justify-center items-center w-10/12 border pr-3 bg-white dark:bg-zinc-900 border-blue-100 dark:border-gray-500 rounded-full px-1 py-2"
   >
     <UInput
       v-model="search"
