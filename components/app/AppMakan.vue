@@ -8,7 +8,9 @@
         :class="carouselTow"
       >
         <UContainer>
-          <div class="w-full flex flex-row-reverse justify-around items-center">
+          <div
+            class="w-full flex flex-row justify-around items-center chap-chin"
+          >
             <UButton
               :ui="{ rounded: 'rounded-2xl' }"
               icon="i-heroicons-adjustments-horizontal-20-solid"
@@ -29,12 +31,12 @@
                 :prev-button="{
                   color: 'gray',
                   icon: 'i-heroicons-arrow-left-20-solid',
-                  class: '-left-9 text-blue-500  bg-blue-50',
+                  class: '-left-9 text-blue-500  bg-white',
                 }"
                 :next-button="{
                   color: 'gray',
                   icon: 'i-heroicons-arrow-right-20-solid',
-                  class: '-right-9 text-blue-500 bg-blue-50',
+                  class: '-right-9 text-blue-500 bg-white',
                 }"
                 arrows
                 class="w-full text-right md:w-full"
@@ -87,4 +89,8 @@ onUnmounted(() => {
 const items = useMakane();
 </script>
 
-<style scoped></style>
+<style scoped>
+.chap-chin {
+  direction: ltr;
+}
+</style>

@@ -1,4 +1,12 @@
 <template>
+  <!-- <div class="w-1/2 fixed z-50 bottom-2 right-5">
+    <UAlert
+      icon="i-heroicons-command-line"
+      color="green"
+      title="Heads up!"
+      description="You can add components to your app using the cli."
+    />
+  </div> -->
   <div
     class="grid md:gap-4 lg:gap-0 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 place-content-center group"
   >
@@ -44,24 +52,38 @@
         <div
           class="card dark-mode light-mode mb-12 shadow-lg dark:shadow-zinc-800 dark:drop-shadow-md rounded-b-lg"
         >
-          <div class="card-info rastChin">
-            <p class="text-title">{{ box.nameCar }}</p>
-            <p class="text-body">{{ box.Description }}</p>
+          <div class="card-info rastChin space-y-2">
+            <p class="font-semibold text-lg">
+              اسم خودرو :
+              <span class="text-xl text-zinc-700 dark:text-blue-500">
+                {{ box.nameCar }}
+              </span>
+            </p>
+            <p class="font-semibold text-lg">
+              مکان خودرو :
+              <span class="text-xl text-zinc-700 dark:text-blue-500">
+                {{ box.makan }}
+              </span>
+            </p>
           </div>
-          <UDivider icon="i-heroicons-arrow-down-circle-16-solid" />
+          <UDivider
+            class="my-2"
+            icon="i-heroicons-arrow-down-circle-16-solid"
+          />
           <div class="card-footer rastChin">
-            <span
-              v-if="box.tavafogi"
-              class="text-blue-500 dark:text-blue-400 font-medium"
-              >توافقی</span
-            >
+            <span v-if="box.tavafogi" class="text-title">
+              قیمت :
+              <span class="text-blue-500 dark:text-blue-400 font-medium"
+                >توافقی</span
+              >
+            </span>
             <span v-else class="text-title"
               >قیمت :
               <span class="text-gray-600 dark:text-gray-400 text-base">{{
                 nFormat.format(+box.price)
               }}</span></span
             >
-            <div>
+            <div class="flex justify-between items-baseline">
               <UButton
                 class="mt-4"
                 @click="handleModal(box)"
@@ -69,6 +91,7 @@
                 color="blue"
               >
               </UButton>
+              <AppSave />
             </div>
           </div>
         </div>
@@ -77,6 +100,7 @@
     </div>
     <CarModal v-model="isOpen" :data="carDetail"></CarModal>
   </div>
+
   <!-- ..... -->
 </template>
 <script setup lang="ts">
@@ -90,7 +114,6 @@ const nFormat = new Intl.NumberFormat();
 const handleModal = (car: any) => {
   carDetail.value = car;
   isOpen.value = true;
-  console.log(car);
 };
 </script>
 
@@ -102,7 +125,7 @@ const handleModal = (car: any) => {
   direction: ltr;
 }
 .card {
-  height: 190px;
+  height: 220px;
   padding: 0.8em;
   position: relative;
   overflow: visible;

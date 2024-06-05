@@ -10,8 +10,10 @@
         ></AppGallery>
       </div>
       <section class="md:w-2/3 w-full">
-        <div class="flex justify-start items-start flex-row gap-10 w-full">
-          <div class="flex flex-col w-1/2">
+        <div
+          class="flex justify-center items-start md:justify-start md:items-start flex-col md:flex-row gap-4 md:gap-10 w-full"
+        >
+          <div class="flex flex-col w-full md:w-1/2 gap-4">
             <p class="font-semibold dark:text-white text-black">
               اسم ماشین :
               <span class="font-normal text-green-500">
@@ -21,7 +23,7 @@
             <p class="font-semibold dark:text-white text-black">
               قیمت :
               <span class="font-normal text-green-500">{{
-                nFormat.format(+car?.price)
+                nFormat.format(car?.price as number)
               }}</span>
             </p>
             <p class="font-semibold dark:text-white text-black">
@@ -31,7 +33,7 @@
               }}</span>
             </p>
           </div>
-          <div class="flex flex-col w-1/2">
+          <div class="flex flex-col w-full md:w-1/2 gap-4">
             <p class="font-semibold dark:text-white text-black">
               تاریخ تولید :
               <span class="font-normal text-green-500">
@@ -44,7 +46,7 @@
                 {{ car?.bime }}
               </span>
             </p>
-            <p class="font-semibold dark:text-white text-black">
+            <p class="font-semibold dark:text-white text-black text-nowrap">
               مصافت طی شده :
               <span class="font-normal text-green-500"> {{ car?.km }} </span>
             </p>
@@ -58,6 +60,7 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router";
+import type { any } from "zod";
 
 const route = useRoute();
 const items = useItems();

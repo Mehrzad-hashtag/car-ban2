@@ -75,7 +75,7 @@
               class="flex flex-row-reverse justify-start items-center w-3/4 lg: md:mb-7 gap-4 lg:mb-4"
             >
               <div
-                class="rounded-3xl flex justify-around items-center w-3/12 lg:w-3/12 border mb-2 border-gray-300 bg-white dark:bg-zinc-900"
+                class="rounded-3xl dark:border-zinc-700 flex justify-around items-center w-4/12 lg:w-3/12 xl:w-2/12 border mb-2 border-gray-300 bg-white dark:bg-gray-900"
               >
                 <!-- .... -->
                 <UPopover>
