@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="bg-gray-50 dark:bg-zinc-900 border-t dark:border-zinc-800 border-gray-100"
+    class="bg-gray-50 dark:bg-zinc-900 border-t-2 dark:border-zinc-800 border-gray-100"
   >
     <div class="mx-auto w-full max-w-screen-xl">
       <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
@@ -195,6 +195,6 @@
   </footer>
 </template>
 
-<script setup></script>
+<script setup lang="ts"></script>
 
 <style scoped></style>

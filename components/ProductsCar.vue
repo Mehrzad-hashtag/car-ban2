@@ -1,5 +1,5 @@
 <template>
-  <!-- <div class="w-1/2 fixed z-50 bottom-2 right-5">
+  <!-- <div class="w-1/6 fixed z-50 bottom-2 right-5">
     <UAlert
       icon="i-heroicons-command-line"
       color="green"
@@ -55,13 +55,13 @@
           <div class="card-info rastChin space-y-2">
             <p class="font-semibold text-lg">
               اسم خودرو :
-              <span class="text-xl text-zinc-700 dark:text-blue-500">
+              <span class="text-xl text-blue-500 dark:text-blue-500">
                 {{ box.nameCar }}
               </span>
             </p>
             <p class="font-semibold text-lg">
               مکان خودرو :
-              <span class="text-xl text-zinc-700 dark:text-blue-500">
+              <span class="text-xl text-blue-500 dark:text-blue-500">
                 {{ box.makan }}
               </span>
             </p>
@@ -91,7 +91,8 @@
                 color="blue"
               >
               </UButton>
-              <AppSave />
+
+              <AppSave :id="box.id" />
             </div>
           </div>
         </div>
