@@ -11,15 +11,26 @@
           <div
             class="w-full flex flex-row justify-around items-center chap-chin"
           >
-            <UButton
-              :ui="{ rounded: 'rounded-2xl' }"
-              icon="i-heroicons-adjustments-horizontal-20-solid"
-              size="lg"
-              color="white"
-              variant="solid"
-              label="فیلتر کنید"
-              trailing
-            />
+            <div class="flex justify-center gap-6">
+              <UButton
+                :ui="{ rounded: 'rounded-2xl' }"
+                to="/favorites/items"
+                size="lg"
+                icon="i-heroicons-heart-solid"
+                color="white"
+                label="علاقه مندی ها"
+                variant="solid"
+              />
+              <UButton
+                :ui="{ rounded: 'rounded-2xl' }"
+                icon="i-heroicons-adjustments-horizontal-20-solid"
+                size="lg"
+                color="white"
+                variant="solid"
+                label="فیلتر کنید"
+                trailing
+              />
+            </div>
             <div class="w-8/12 chap-chin">
               <UCarousel
                 v-slot="{ item }"

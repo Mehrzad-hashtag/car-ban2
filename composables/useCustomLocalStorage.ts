@@ -1,11 +1,11 @@
-export const useCustomLocalStorage = (name: string, initialValue: any) => {
+export const useCustomLocalStorage = <T>(name: string, initialValue: T) => {
   const localStorageValue = useLocalStorage(name, initialValue, {
     initOnMounted: true,
   });
 
-  const getValue = computed<any>(() => localStorageValue.value);
+  const getValue = computed<T>(() => localStorageValue.value);
 
-  const setValue = (value: any): void => {
+  const setValue = (value: T): void => {
     localStorageValue.value = value;
   };
 
