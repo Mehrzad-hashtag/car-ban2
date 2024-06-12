@@ -91,7 +91,9 @@
       <div
         class="px-4 py-6 bg-gray-100 dark:bg-zinc-800 w-full md:flex md:items-center md:justify-center"
       >
-        <div class="mx-auto container w-full max-w-screen-xl">
+        <div
+          class="mx-auto container flex justify-center items-baseline gap-96 w-full max-w-screen-xl"
+        >
           <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center"
             >© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights
             Reserved.
