@@ -1,18 +1,10 @@
 <template>
-  <!-- <div class="w-1/6 fixed z-50 bottom-2 right-5">
-    <UAlert
-      icon="i-heroicons-command-line"
-      color="green"
-      title="Heads up!"
-      description="You can add components to your app using the cli."
-    />
-  </div> -->
   <div
     class="grid md:gap-4 lg:gap-0 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 place-content-center group"
   >
     <div
       class="chapChin hover:-translate-y-4 ease-in-out duration-300 relative w-full lg:w-5/6 mx-auto"
-      v-for="box in items"
+      v-for="box in data"
       :key="box.id"
     >
       <!-- ...1... -->
@@ -43,7 +35,7 @@
         }"
       >
         <div class="card-img rounded-t-3xl">
-          <img class="caca rounded-t-lg" :src="item" alt="" />
+          <NuxtImg class="caca rounded-t-lg" :src="item" alt="" />
         </div>
       </UCarousel>
       <!-- ...1/... -->
@@ -105,13 +97,17 @@
   <!-- ..... -->
 </template>
 <script setup lang="ts">
+import { type Car } from "../types/car.interface";
+
+const props = defineProps({
+  data: {
+    type: Array as PropType<Car[]>,
+    required: true,
+  },
+});
 const isOpen = ref(false);
 const carDetail = ref({});
-
-const items = useItems();
-
 const nFormat = new Intl.NumberFormat();
-
 const handleModal = (car: any) => {
   carDetail.value = car;
   isOpen.value = true;

@@ -9,7 +9,7 @@
       >
         <UContainer>
           <div
-            class="w-full flex flex-row justify-around items-center chap-chin"
+            class="w-full flex flex-row gap-4 lg:gap-8 justify-around items-center chap-chin"
           >
             <div class="flex justify-center gap-6">
               <UButton
@@ -31,7 +31,7 @@
                 trailing
               />
             </div>
-            <div class="w-8/12 chap-chin">
+            <div class="w-5/12 lg:w-8/12 chap-chin">
               <UCarousel
                 v-slot="{ item }"
                 :items="items"

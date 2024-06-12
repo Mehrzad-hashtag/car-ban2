@@ -1,13 +1,15 @@
 <template>
   <section>
     <UContainer>
-      <ProductsCar />
+      <ProductsCar :data="data" />
       <AppPhone />
     </UContainer>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const data = useItems();
+</script>
 
 <style scoped>
 .chap-chin {

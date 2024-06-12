@@ -10,6 +10,7 @@
       <AppFooter />
     </div>
   </div>
+  <AppTopScrool />
 </template>
 <script setup>
 useHead({

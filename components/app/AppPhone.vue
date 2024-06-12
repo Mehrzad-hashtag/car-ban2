@@ -22,7 +22,7 @@
       <!-- ....1/.... -->
       <!-- ....2.... -->
       <section>
-        <NuxtLink to="love">
+        <NuxtLink to="/favorites/items">
           <div class="group flex flex-col justify-center items-center">
             <UIcon
               name="i-heroicons-heart"
@@ -100,10 +100,7 @@ const state = reactive({
   password: undefined,
 });
 
-async function onSubmit(event: FormSubmitEvent<Schema>) {
-  // Do something with data
-  console.log(event.data);
-}
+async function onSubmit(event: FormSubmitEvent<Schema>) {}
 const scrollPhoneFooter = ref("");
 const scrollresize = () => {
   if (window.scrollY > 50) {
