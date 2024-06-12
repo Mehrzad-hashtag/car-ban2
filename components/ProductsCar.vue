@@ -9,6 +9,7 @@
     >
       <!-- ...1... -->
       <UCarousel
+        v-if="box.carImg.length >= 1"
         v-slot="{ item }"
         :items="box.carImg"
         :ui="{
@@ -16,7 +17,7 @@
           indicators: {
             wrapper:
               'absolute flex items-center justify-center gap-2 py-1 truncate rounded-full   mx-10 md:mx-10  bottom-1  inset-x-0',
-            base: 'rounded-full h-2 w-2  ',
+            base: 'rounded-3xl h-2 w-2  ',
             active: 'bg-white dark:bg-white  w-3 h-3 ',
             inactive: 'bg-white dark:bg-gray-800  mix-blend-overlay',
           },
@@ -35,9 +36,12 @@
         }"
       >
         <div class="card-img rounded-t-3xl">
-          <NuxtImg class="caca rounded-t-lg" :src="item" alt="" />
+          <NuxtImg class="caca rounded-t-lg" :src="item" alt="1" />
         </div>
       </UCarousel>
+      <div v-else>
+        <NuxtImg class="caca rounded-t-lg" src="khali.svg" alt="2" />
+      </div>
       <!-- ...1/... -->
       <!-- ...2... -->
       <section>

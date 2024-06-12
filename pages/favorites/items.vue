@@ -1,6 +1,6 @@
 <template>
   <UContainer>
-    <span v-if="favoriteItems.length > 0">
+    <span v-if="favoriteItems.length >= 1">
       <ProductsCar :data="favoriteItems" />
     </span>
     <div class="flex flex-col justify-center items-center" v-else>

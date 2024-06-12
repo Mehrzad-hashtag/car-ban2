@@ -7,7 +7,7 @@ export const useItems = (): Car[] => {
       nameCar: "bmw",
       Description: "به میزبانی کارل فردریکسن",
       price: 12000000,
-      carImg: ["/bm-1.jpg", "ww.webp", "pride.webp", "/sa.jpg"],
+      carImg: [],
       tavafogi: true,
       salamati: "سالم",
       vazeyat: "بیرنگ",
