@@ -1,6 +1,15 @@
 <template>
   <UContainer>
-    <ProductsCar :data="favoriteItems" />
+    <span v-if="favoriteItems.length > 0">
+      <ProductsCar :data="favoriteItems" />
+    </span>
+    <div class="flex flex-col justify-center items-center" v-else>
+      <NuxtImg class="w-full md:w-3/6 rounded-3xl" src="khali.svg" />
+
+      <UButton to="/" class="py-2 my-4" size="xl" color="gray" variant="ghost"
+        >خودرویی وجود ندارد ...</UButton
+      >
+    </div>
   </UContainer>
 </template>
 
@@ -15,7 +24,6 @@ watch(
   getValue,
   (newValue) => {
     savedItems.value = newValue;
-    console.log(savedItems.value);
 
     favoriteItems.value = data.filter((item) =>
       savedItems.value.includes(item.id)
