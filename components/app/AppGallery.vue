@@ -1,5 +1,5 @@
 <template>
-  <div class="grid gap-4">
+  <div v-if="images.length >= 1" class="grid gap-4">
     <div>
       <NuxtImg
         class="h-auto max-w-full rounded-lg card-img"
@@ -18,6 +18,9 @@
         alt=""
       />
     </div>
+  </div>
+  <div v-else>
+    <NuxtImg class="w-full" src="khali.svg" />
   </div>
 </template>
 
