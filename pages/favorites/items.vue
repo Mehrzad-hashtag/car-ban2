@@ -1,7 +1,10 @@
 <template>
   <UContainer>
-    <span v-if="favoriteItems.length >= 1">
-      <ProductsCar :data="favoriteItems" />
+    <span v-if="favLength >= 1">
+      <div class="back h-24 flex justify-center items-center rounded-sm mb-8">
+        <p class="text-2xl font-bold">خودرو های ذخیره شده ...</p>
+      </div>
+      <ProductCarCard v-for="(value, key) in favCars" :key="key" :box="value" />
     </span>
     <div class="flex flex-col justify-center items-center" v-else>
       <NuxtImg class="w-full md:w-3/6 rounded-3xl" src="khali.svg" />
@@ -14,21 +17,5 @@
 </template>
 
 <script setup lang="ts">
-const { getValue } = useCustomLocalStorage<string[]>("favoriteItems", []);
-const savedItems = ref(getValue.value);
-const data = useItems();
-const favoriteItems = ref(
-  data.filter((item) => savedItems.value.includes(item.id))
-);
-watch(
-  getValue,
-  (newValue) => {
-    savedItems.value = newValue;
-
-    favoriteItems.value = data.filter((item) =>
-      savedItems.value.includes(item.id)
-    );
-  },
-  { immediate: true }
-);
+const { favCars, favLength } = useItems();
 </script>

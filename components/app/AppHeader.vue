@@ -63,7 +63,7 @@
       class="shadow-sm hidden md:flex md:justify-center md:items-center transition-all duration-300"
     >
       <div
-        class="px-1 fixed lg:py-4 w-full bg-gray-50 dark:bg-zinc-900 z-30"
+        class="px-1 fixed lg:py-4 w-full bg-white dark:bg-zinc-900 z-30"
         :class="{
           'h-20 mt-20 ease-in-out overflow-hidden': isScrolled,
           'h-46 mt-44': !isScrolled,

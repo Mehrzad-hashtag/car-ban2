@@ -20,7 +20,7 @@
     </div>
   </div>
   <div v-else>
-    <NuxtImg class="w-full" src="khali.svg" />
+    <NuxtImg class="w-full h-1/2 rounded-md" src="khali.svg" />
   </div>
 </template>
 

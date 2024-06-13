@@ -4,7 +4,7 @@
       class="shadow-sm hidden md:flex md:justify-center md:items-center mb-16 md:w-full z-50"
     >
       <div
-        class="fixed md:w-full border-b-2 border-slate-100 dark:border-slate-800 bg-gray-50 dark:bg-zinc-900 z-30"
+        class="fixed md:w-full border-b-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-zinc-900 z-30"
         :class="carouselTow"
       >
         <UContainer>
@@ -13,7 +13,9 @@
           >
             <div class="flex justify-center gap-6">
               <UButton
+                v-if="$route.fullPath != '/favorites/items'"
                 :ui="{ rounded: 'rounded-2xl' }"
+                class="hover:bg-blue-500 hover:text-white transition-all duration-300"
                 to="/favorites/items"
                 size="lg"
                 icon="i-heroicons-heart-solid"
@@ -22,7 +24,19 @@
                 variant="solid"
               />
               <UButton
+                v-else-if="$route.fullPath == '/favorites/items'"
+                to="/"
+                class="hover:bg-blue-500 hover:text-white transition-all duration-300"
                 :ui="{ rounded: 'rounded-2xl' }"
+                size="lg"
+                icon="i-heroicons-home-20-solid"
+                color="white"
+                label="برگشت به خانه"
+                variant="solid"
+              />
+              <UButton
+                :ui="{ rounded: 'rounded-2xl' }"
+                class="hover:bg-blue-500 hover:text-white transition-all duration-300"
                 icon="i-heroicons-adjustments-horizontal-20-solid"
                 size="lg"
                 color="white"

@@ -7,7 +7,7 @@
 
     <div class="z-0">
       <slot />
-      <AppFooter />
+      <LazyAppFooter />
     </div>
   </div>
   <AppTopScrool />

@@ -1,7 +1,7 @@
 import { type Car } from "../types/car.interface";
 
-export const useItems = (): Car[] => {
-  return [
+export const useItems = () => {
+  const cars: Car[] = [
     {
       id: "1",
       nameCar: "bmw",
@@ -241,4 +241,36 @@ export const useItems = (): Car[] => {
       makan: "تبریز",
     },
   ];
+  // const cars2 = ref([]);
+  // const fetchCars = ()=>{
+  //   const {data} = useFetch("sdfsdf")
+
+  //   cars2.value= data.value.data.cars
+  // }
+
+  const favCars = useLocalStorage<Record<string, Car>>(
+    "favCars",
+    {},
+    { initOnMounted: true }
+  );
+  const favLength = computed(() => Object.keys(favCars.value).length);
+
+  const toggleFav = (item: Car) => {
+    //call api
+    try {
+      // $fetch("http://dfsdf", {
+      //   method: "put",
+      //   body: { CarId: item.id },
+      // });
+      if (favCars.value[item.id]) {
+        delete favCars.value[item.id];
+      } else {
+        favCars.value[item.id] = item;
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  return { cars, favCars, toggleFav, favLength };
 };

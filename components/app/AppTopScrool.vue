@@ -1,20 +1,16 @@
 <template>
-  <button
+  <UButton
     id="scrollToTopBtn"
-    class="group fixed bottom-5 left-5 z-10 rounded-full bg-blue-500 text-white p-4 hover:text-blue-600 transition-all"
     v-show="showButton"
     @click="scrollToTop"
-  >
-    <NuxtImg
-      class="w-4 h-4 bg-black"
-      src="i-heroicons-arrow-up-16-solid"
-    ></NuxtImg>
-  </button>
+    class="group fixed bottom-5 left-5 z-10"
+    :ui="{ rounded: 'rounded-full' }"
+    icon="i-heroicons-arrow-up-16-solid"
+    color="blue"
+  ></UButton>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from "vue";
-
 const showButton = ref<boolean>(false);
 
 const handleScroll = (): void => {

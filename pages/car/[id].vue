@@ -63,7 +63,7 @@ import { useRoute } from "vue-router";
 import type { any } from "zod";
 
 const route = useRoute();
-const items = useItems();
+const { cars: items } = useItems();
 const nFormat = new Intl.NumberFormat();
 
 const car = items.find((m) => m.id === route.params.id);

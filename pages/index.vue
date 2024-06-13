@@ -1,14 +1,14 @@
 <template>
   <section>
     <UContainer>
-      <ProductsCar :data="data" />
+      <ProductsCar />
       <AppPhone />
     </UContainer>
   </section>
 </template>
 
 <script setup lang="ts">
-const data = useItems();
+const { cars: data } = useItems();
 </script>
 
 <style scoped>
